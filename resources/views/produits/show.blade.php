@@ -14,8 +14,13 @@
             <p>{{$data->prix}}</p>
             <p>{{$data->quantite}}</p>
             <p>{{$data->description}}</p>
-            <div>
+            <div class="col-md-3">
                 <a href="{{route('produit.edit',$data->id)}}" class="btn btn-primary">Edit</a>
+                <form action="{{route('produit.destroy',$data->id)}}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" name="supprimer" class="btn btn-danger offset-md-3">Delete</button>
+                </form>
             </div>
         </div>
 </body>

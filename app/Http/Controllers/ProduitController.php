@@ -79,6 +79,9 @@ class ProduitController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // dd('suppression echoue');
+        $data = Produit::find($id);
+        $data->delete();
+        return redirect()->route('produit.index');
     }
 }

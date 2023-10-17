@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\aproposController;
+use App\Http\Controllers\LivreController;
 use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\viewController;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,4 @@ Route::get('/', function () {
 Route::get('/rappel',[viewController::class,'rappel'])->name('myFonction');
 Route::get('/apropos',[aproposController::class,'apropos'])->name('Apropos');
 Route::resource('/produit',ProduitController::class);
+Route::resource('/livre',LivreController::class);
